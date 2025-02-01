@@ -1,5 +1,6 @@
 ﻿using Assignment04.Association.Composition;
 using Assignment04.Inheritance;
+using System;
 using System.Numerics;
 
 namespace Assignment04
@@ -14,16 +15,16 @@ namespace Assignment04
         //{
         //    return x + y + z;
         //}
-         
+
         static void Main(string[] args)
         {
             #region Inhertance 
-           // Parent Class
+            // Parent Class
             Parent Parent = new Parent(1, 2);
             Parent.x = 10;
             Parent.y = 20;
             Console.WriteLine(Parent);
-           
+
 
             // Use Function Inside Class
             Console.WriteLine(Parent.Product());
@@ -62,7 +63,7 @@ namespace Assignment04
 
             #region Association
             #region compostion
-            
+
 
             Product p = new Product() { Name = "mohamed" };
             p.Id = 10;
@@ -139,7 +140,80 @@ namespace Assignment04
             #endregion
             #endregion
 
+            #region AccessModifiers
+            /* static void Main(string[] args)
+             {*/
+            /////Access Modifiers with inheritance
+            /////private not inherited
+            /////Internal inherited and accessible within the assembly only 
+            /////public inherited and accessible inside outside assembly
+            /////private protected inherited as private inside assembly
+            /////protected inherited as private inside - outside assembly
+            /////Internal protected inherited as internal inside assembly and inherited as private outside assembly
 
+
+            //Console.WriteLine("Hello, World!");
+            //TypeA typeA = new TypeA(10, 20, 30, 40, 50);
+            //typeA.A = 15; // valed
+            //              //typeA.B = 10; // invaled // private
+            //              // typeA.C = 15; // invaled // private
+            //              //typeA.D = 15; // invaled // private
+            //typeA.E = 15; // valied
+
+            //Console.WriteLine(typeA.A);
+
+            //TypeB typeB = new TypeB(50, 60, 70, 80, 10, 10, 20);
+            //Console.WriteLine(typeA);
+            //typeB.A = 15;
+            ////typeB.B = 15; // not valid because it private
+            ////typeB.C = 15; // protected // private inside typeB only
+            ////typeB.D = 15; // private protected // private inside typeB only
+            //typeB.E = 15;
+            //typeB.F = 15;
+            //Console.WriteLine(typeB);
+            //Console.ReadLine();
+            // }
+
+
+            //public class TypeB : TypeA
+            //{
+            //    public int F { get; set; }
+            //    public int G { get; set; }
+
+            //    public TypeB(int _A, int _B, int _C, int _D, int _E, int _F, int _G) : base(_A, _B, _C, _D, _E)
+            //    {
+            //        F = _F;
+            //        G = _G;
+            //    }
+            //    public override string ToString()
+            //    {
+            //        return $"a is {A} , C is {C} , D is {D} , E is {E} , F is {F} G is {G}";
+            //        // note B is not allowed because it is private 
+            //    }
+
+            //         public class TypeA
+            //    {
+            //        public int A { get; set; } // public
+            //        private int B { get; set; }  // private
+            //        protected int C { get; set; } // protected work on inhertance it will be (private)
+            //        private protected int D { get; set; } // private
+            //        protected internal int E { get; set; } // internal
+
+            //        public TypeA(int _A, int _B, int _C, int _D, int _E)
+            //        {
+            //            A = _A;
+            //            B = _B;
+            //            C = _C;
+            //            D = _D;
+            //            E = _E;
+            //        }
+            //        public override string ToString()
+            //        {
+            //            return $"A is {A} , B is {B} , c is {C} , D is {D}, e is {E}";
+            //        }
+            //    }
+            //}
         }
+        #endregion
     }
 }
